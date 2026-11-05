@@ -15,7 +15,7 @@ Use this when you have the nebula-commander repository on disk (for example unde
 Clone or copy the nebula-commander repo so that the path contains both `nix/` and `backend/`:
 
 ```bash
-git clone https://github.com/NixRTR/nebula-commander.git /etc/nixos/nebula-commander
+git clone https://github.com/nebula-commander/nebula-commander.git /etc/nixos/nebula-commander
 # Or use a path of your choice; the module expects ../backend relative to nix/module.nix
 ```
 
@@ -77,7 +77,7 @@ In your system flake (e.g. `flake.nix` in `/etc/nixos` or your config directory)
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
-    nebula-commander.url = "github:NixRTR/nebula-commander";
+    nebula-commander.url = "github:nebula-commander/nebula-commander";
   };
 
   outputs = { self, nixpkgs, nebula-commander, ... }: {

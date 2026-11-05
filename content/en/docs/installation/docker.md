@@ -15,7 +15,7 @@ You need: `docker-compose.yml`, `docker-compose-keycloak.yml`, `.env.example`, a
 Run these in an empty directory (or where you want the Docker setup):
 
 ```bash
-BASE_URL="https://raw.githubusercontent.com/NixRTR/nebula-commander/main/docker"
+BASE_URL="https://raw.githubusercontent.com/nebula-commander/nebula-commander/main/docker"
 
 curl -sSL -o docker-compose.yml "${BASE_URL}/docker-compose.yml"
 curl -sSL -o docker-compose-keycloak.yml "${BASE_URL}/docker-compose-keycloak.yml"
@@ -46,7 +46,7 @@ cp -r env.d.example env.d
 The repository provides a script that downloads the same files and checks for prerequisites. It does **not** install anything; if Docker or Docker Compose is missing, it prints what you need and exits.
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/NixRTR/nebula-commander/main/docker/download.sh | bash
+curl -sSL https://raw.githubusercontent.com/nebula-commander/nebula-commander/main/docker/download.sh | bash
 ```
 
 Then run the steps the script prints: copy `.env.example` to `.env`, copy `env.d.example` to `env.d`, edit `env.d/backend`, create the network, and start with `docker compose up -d`.
@@ -71,7 +71,7 @@ services:
     build:
       context: ..
       dockerfile: docker/backend/Dockerfile
-    image: ghcr.io/nixrtr/nebula-commander-backend:latest
+    image: ghcr.io/nebula-commander/nebula-commander-backend:latest
     container_name: nebula-commander-backend
     restart: unless-stopped
     ports:
@@ -100,7 +100,7 @@ services:
     build:
       context: ..
       dockerfile: docker/frontend/Dockerfile
-    image: ghcr.io/nixrtr/nebula-commander-frontend:latest
+    image: ghcr.io/nebula-commander/nebula-commander-frontend:latest
     container_name: nebula-commander-frontend
     restart: unless-stopped
     ports:
@@ -154,7 +154,7 @@ services:
     build:
       context: ..
       dockerfile: docker/keycloak/Dockerfile
-    image: ghcr.io/nixrtr/nebula-commander-keycloak:latest
+    image: ghcr.io/nebula-commander/nebula-commander-keycloak:latest
     container_name: keycloak
     restart: unless-stopped
     env_file:
@@ -426,9 +426,9 @@ See [Development: Manual builds](/docs/development/manual-builds/#docker) for bu
 
 | Image | Registry | Base | Port | Platforms |
 |-------|-----------|------|------|-----------|
-| Backend | `ghcr.io/nixrtr/nebula-commander-backend:latest` | Python 3.13-slim | 8081 | linux/amd64, linux/arm64 |
-| Frontend | `ghcr.io/nixrtr/nebula-commander-frontend:latest` | nginx:alpine | 80 | linux/amd64, linux/arm64 |
-| Keycloak | `ghcr.io/nixrtr/nebula-commander-keycloak:latest` | Keycloak | 8080 | linux/amd64, linux/arm64 |
+| Backend | `ghcr.io/nebula-commander/nebula-commander-backend:latest` | Python 3.13-slim | 8081 | linux/amd64, linux/arm64 |
+| Frontend | `ghcr.io/nebula-commander/nebula-commander-frontend:latest` | nginx:alpine | 80 | linux/amd64, linux/arm64 |
+| Keycloak | `ghcr.io/nebula-commander/nebula-commander-keycloak:latest` | Keycloak | 8080 | linux/amd64, linux/arm64 |
 
 ## Architecture
 

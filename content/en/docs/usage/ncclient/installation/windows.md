@@ -18,7 +18,7 @@ All three are installed to `%ProgramFiles%\Nebula Commander\`. The installer can
 
 **Getting the installer:**
 
-- Download `NebulaCommander-windows-amd64.msi` from the [GitHub Releases](https://github.com/NixRTR/nebula-commander/releases) page for the version you want.
+- Download `NebulaCommander-windows-amd64.msi` from the [GitHub Releases](https://github.com/nebula-commander/nebula-commander/releases) page for the version you want.
 - Use `SHA256SUMS.txt` in the same release to verify the file.
 
 **After install:**

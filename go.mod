@@ -1,4 +1,4 @@
-module github.com/NixRTR/nebulacdr.com
+module github.com/nebula-commander/nebulacdr.com
 
 go 1.21
 

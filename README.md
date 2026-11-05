@@ -1,6 +1,6 @@
 # nebulacdr.com
 
-Hugo website for [Nebula Commander](https://github.com/NixRTR/nebula-commander), built with the [Docsy](https://themes.gohugo.io/themes/docsy/) theme.
+Hugo website for [Nebula Commander](https://github.com/nebula-commander/nebula-commander), built with the [Docsy](https://themes.gohugo.io/themes/docsy/) theme.
 
 ## Prerequisites
 

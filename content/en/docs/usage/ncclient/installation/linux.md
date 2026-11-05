@@ -55,7 +55,7 @@ The packages below can also be installed directly, without adding the repository
 
 ## .deb (Debian, Ubuntu, and derivatives)
 
-Download all three packages from the [Client Download page](/docs/web-ui/client-download/) or [GitHub Releases](https://github.com/NixRTR/nebula-commander/releases), then install together so `apt` resolves the dependency order:
+Download all three packages from the [Client Download page](/docs/web-ui/client-download/) or [GitHub Releases](https://github.com/nebula-commander/nebula-commander/releases), then install together so `apt` resolves the dependency order:
 
 ```bash
 sudo apt install ./nebula-commander-client.deb ./nebula-commander-service.deb ./nebula-commander-desktop.deb

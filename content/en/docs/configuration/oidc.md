@@ -91,4 +91,4 @@ is the default, so existing Keycloak deployments need no changes.
 - **network-owner** – Create and manage networks, nodes, invitations, node requests, and access; set default node parameters and auto-approval.
 - **user** – Access only what network owners grant; request nodes and higher access.
 
-See the [repository docker/README](https://github.com/NixRTR/nebula-commander/tree/main/docker) for detailed RBAC and permission features.
+See the [repository docker/README](https://github.com/nebula-commander/nebula-commander/tree/main/docker) for detailed RBAC and permission features.

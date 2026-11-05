@@ -57,4 +57,4 @@ Dark mode works the same way on mobile:
 
 ## Access control
 
-Access is role-based: **system-admin**, **network-owner**, and **user**. Permissions include network-level and node-level access, plus access grants for temporary elevated admin access. Critical actions (e.g. delete network, node, or user) require reauthentication. Details are in the [repository docker/README](https://github.com/NixRTR/nebula-commander/tree/main/docker#user-roles-and-permissions).
+Access is role-based: **system-admin**, **network-owner**, and **user**. Permissions include network-level and node-level access, plus access grants for temporary elevated admin access. Critical actions (e.g. delete network, node, or user) require reauthentication. Details are in the [repository docker/README](https://github.com/nebula-commander/nebula-commander/tree/main/docker#user-roles-and-permissions).

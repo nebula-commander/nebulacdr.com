@@ -80,4 +80,4 @@ nix flake update nebula-commander     # in your system flake
 sudo nixos-rebuild switch
 ```
 
-If your flake pins a release (`github:NixRTR/nebula-commander/v0.7.0`), change the tag instead. A NixOS build reports the commit it was built from (for example "built from commit f67bc81") rather than a version number.
+If your flake pins a release (`github:nebula-commander/nebula-commander/v0.7.0`), change the tag instead. A NixOS build reports the commit it was built from (for example "built from commit f67bc81") rather than a version number.

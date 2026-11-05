@@ -71,9 +71,9 @@ All images are pushed to GitHub Container Registry (`ghcr.io`):
 
 | Image | Platforms |
 |-------|------------|
-| `ghcr.io/nixrtr/nebula-commander-backend` | linux/amd64, linux/arm64 |
-| `ghcr.io/nixrtr/nebula-commander-frontend` | linux/amd64, linux/arm64 |
-| `ghcr.io/nixrtr/nebula-commander-keycloak` | linux/amd64, linux/arm64 |
+| `ghcr.io/nebula-commander/nebula-commander-backend` | linux/amd64, linux/arm64 |
+| `ghcr.io/nebula-commander/nebula-commander-frontend` | linux/amd64, linux/arm64 |
+| `ghcr.io/nebula-commander/nebula-commander-keycloak` | linux/amd64, linux/arm64 |
 
 Each image is tagged with the version (e.g. `1.2.3`) and `latest`. Build uses Docker Buildx, layer caching (GitHub Actions cache), and the Dockerfiles under `docker/`. The frontend image is built with `DOWNLOAD_BINARIES=1` so it can serve ncclient binaries from the release.
 
@@ -109,4 +109,4 @@ The repository has no state of its own; every run regenerates it from the Releas
 
 ## Testing workflows locally (act)
 
-You can run the workflows locally with [act](https://github.com/nektos/act). Only **Linux** jobs run in Docker; Windows and macOS jobs do not use real Windows/macOS runners in act. See the repository [.github/README.md](https://github.com/NixRTR/nebula-commander/blob/main/.github/README.md) for setup, usage, and how to simulate a tag push. Release upload and secrets still require GitHub when running with act.
+You can run the workflows locally with [act](https://github.com/nektos/act). Only **Linux** jobs run in Docker; Windows and macOS jobs do not use real Windows/macOS runners in act. See the repository [.github/README.md](https://github.com/nebula-commander/nebula-commander/blob/main/.github/README.md) for setup, usage, and how to simulate a tag push. Release upload and secrets still require GitHub when running with act.

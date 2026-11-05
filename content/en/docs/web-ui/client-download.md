@@ -64,7 +64,7 @@ For distributions the packages don't cover, the tab's **Standalone binary or pip
 
 The **Windows** tab offers the CLI on its own and the **MSI installer** (`/downloads/NebulaCommander-windows-amd64.msi`). The MSI installs the CLI, the [Windows app](/docs/usage/ncclient/usage/windows/), and a background Windows Service together, and can add them to PATH. The service does the actual work (polling, running Nebula, split-horizon DNS) as `LocalSystem`, so nothing here needs an admin prompt after installation.
 
-The standalone app and service executables (`NebulaCommanderApp-windows-amd64.exe`, `ncclient-service-windows-amd64.exe`) are published on [GitHub Releases](https://github.com/NixRTR/nebula-commander/releases) but not on this page. They're mainly for development: the service is only ever registered by the MSI, so for normal use install the MSI.
+The standalone app and service executables (`NebulaCommanderApp-windows-amd64.exe`, `ncclient-service-windows-amd64.exe`) are published on [GitHub Releases](https://github.com/nebula-commander/nebula-commander/releases) but not on this page. They're mainly for development: the service is only ever registered by the MSI, so for normal use install the MSI.
 
 ## Getting the enrollment code
 

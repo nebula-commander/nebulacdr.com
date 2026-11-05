@@ -78,8 +78,8 @@ params:
     taxonomyPageHeader: [tags, categories]
 
   # Repository and project links
-  github_repo: https://github.com/NixRTR/nebula-commander
-  github_project_repo: https://github.com/NixRTR/nebula-commander
+  github_repo: https://github.com/nebula-commander/nebula-commander
+  github_project_repo: https://github.com/nebula-commander/nebula-commander
   github_branch: main
 
   # Disable search for now (no GCS ID)
@@ -111,7 +111,7 @@ params:
   links:
     user:
       - name: GitHub
-        url: https://github.com/NixRTR/nebula-commander
+        url: https://github.com/nebula-commander/nebula-commander
         icon: fab fa-github
         desc: Source code and issues
       - name: Nebula

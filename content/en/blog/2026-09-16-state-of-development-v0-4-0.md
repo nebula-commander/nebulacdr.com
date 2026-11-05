@@ -31,7 +31,7 @@ See [About: Status](/about/) for the full implemented/planned breakdown.
 ## How to get involved
 
 - **Run it** — [Server Installation](/docs/installation/) (Docker or NixOS), then the [Web UI](/docs/web-ui/) to create your first network and node.
-- **Contribute** — Code and issues live on [GitHub](https://github.com/NixRTR/nebula-commander). See [Development](/docs/development/) for local setup, CI, and the API reference.
+- **Contribute** — Code and issues live on [GitHub](https://github.com/nebula-commander/nebula-commander). See [Development](/docs/development/) for local setup, CI, and the API reference.
 - **Join us on Matrix** — the [Nebula Commander Matrix Space](https://matrix.to/#/#nebula-commander:matrix.org) for discussion, support, and development conversation.
 
 Thanks for following along with Nebula Commander.

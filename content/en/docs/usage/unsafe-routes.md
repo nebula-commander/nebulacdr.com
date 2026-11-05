@@ -207,7 +207,7 @@ Linux-only. On such a gateway node you need to:
    - macOS: `sysctl -w net.inet.ip.forwarding=1`, plus `pfctl` for NAT.
 3. **Allow forwarding and (for an exit node) NAT between the Nebula tun interface and
    your physical interface.** On Linux with nftables, this is exactly what
-   [`client/linux_routing.py`](https://github.com/NixRTR/nebula-commander/blob/main/client/linux_routing.py) does for `ncclient` - use
+   [`client/linux_routing.py`](https://github.com/nebula-commander/nebula-commander/blob/main/client/linux_routing.py) does for `ncclient` - use
    it as a reference. For a subnet route to `192.168.1.0/24` via tun device `nebula1`:
 
    ```

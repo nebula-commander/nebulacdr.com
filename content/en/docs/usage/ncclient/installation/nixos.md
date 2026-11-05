@@ -8,7 +8,7 @@ A `services.ncclient` module runs ncclient declaratively as a systemd service â€
 
 ```nix
 {
-  inputs.nebula-commander.url = "github:NixRTR/nebula-commander";
+  inputs.nebula-commander.url = "github:nebula-commander/nebula-commander";
 
   outputs = { self, nixpkgs, nebula-commander, ... }: {
     nixosConfigurations.yourHost = nixpkgs.lib.nixosSystem {

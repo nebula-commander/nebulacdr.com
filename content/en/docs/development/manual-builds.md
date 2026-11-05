@@ -74,7 +74,7 @@ The windowed app lives in `client/windows-app/` and needs the .NET 10 SDK (CI us
 dotnet publish -c Release -r win-x64
 ```
 
-Output: `client/windows-app/bin/Release/net10.0-windows10.0.26100.0/win-x64/publish/NebulaCommanderApp.exe`, a single self-contained file that bundles the .NET runtime and Windows App SDK. See [client/windows-app/README.md](https://github.com/NixRTR/nebula-commander/blob/main/client/windows-app/README.md) for details.
+Output: `client/windows-app/bin/Release/net10.0-windows10.0.26100.0/win-x64/publish/NebulaCommanderApp.exe`, a single self-contained file that bundles the .NET runtime and Windows App SDK. See [client/windows-app/README.md](https://github.com/nebula-commander/nebula-commander/blob/main/client/windows-app/README.md) for details.
 
 ---
 
@@ -197,7 +197,7 @@ To build for linux/amd64 and linux/arm64 and push (e.g. to GHCR):
 ```bash
 docker buildx build --platform linux/amd64,linux/arm64 \
   -f docker/backend/Dockerfile \
-  -t ghcr.io/nixrtr/nebula-commander-backend:latest \
+  -t ghcr.io/nebula-commander/nebula-commander-backend:latest \
   --build-arg VERSION=latest \
   --push .
 ```

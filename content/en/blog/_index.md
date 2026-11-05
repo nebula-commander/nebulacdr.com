@@ -8,4 +8,4 @@ menu:
 
 Updates and announcements for Nebula Commander.
 
-Follow the [GitHub repo](https://github.com/NixRTR/nebula-commander) for development news.
+Follow the [GitHub repo](https://github.com/nebula-commander/nebula-commander) for development news.

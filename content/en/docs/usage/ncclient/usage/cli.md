@@ -128,7 +128,7 @@ journalctl -u ncclient -f
 
 ### Other platforms
 
-Run `ncclient run` under your init system (launchd on macOS, Task Scheduler or NSSM on Windows). Example configs are in the repo under `client/examples/`. See [README-startup.md](https://github.com/NixRTR/nebula-commander/blob/main/client/examples/README-startup.md) for step-by-step setup on macOS and Windows. On Windows, the [MSI's service](/docs/usage/ncclient/usage/windows/) is usually the easier option.
+Run `ncclient run` under your init system (launchd on macOS, Task Scheduler or NSSM on Windows). Example configs are in the repo under `client/examples/`. See [README-startup.md](https://github.com/nebula-commander/nebula-commander/blob/main/client/examples/README-startup.md) for step-by-step setup on macOS and Windows. On Windows, the [MSI's service](/docs/usage/ncclient/usage/windows/) is usually the easier option.
 
 ## Subnet routes and exit nodes
 

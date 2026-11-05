@@ -34,4 +34,4 @@ including what's still planned.
 
 ## License
 
-Backend and frontend: MIT. Client (ncclient): GPLv3 or later. See the [repository](https://github.com/NixRTR/nebula-commander) for details.
+Backend and frontend: MIT. Client (ncclient): GPLv3 or later. See the [repository](https://github.com/nebula-commander/nebula-commander) for details.

@@ -112,7 +112,7 @@ you can attach labels directly to the `frontend` service. Example:
 
 ```yaml
   frontend:
-    image: ghcr.io/nixrtr/nebula-commander-frontend:latest
+    image: ghcr.io/nebula-commander/nebula-commander-frontend:latest
     container_name: nebula-commander-frontend
     restart: unless-stopped
     networks:

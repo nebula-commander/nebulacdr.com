@@ -111,6 +111,6 @@ cd client/windows-app
 dotnet publish -c Release -r win-x64
 ```
 
-Output: `bin\Release\net10.0-windows*\win-x64\publish\NebulaCommanderApp.exe`, a single self-contained file (it bundles the .NET runtime and Windows App SDK, so the target machine needs no prerequisites). See [client/windows-app/README.md](https://github.com/NixRTR/nebula-commander/blob/main/client/windows-app/README.md) for details.
+Output: `bin\Release\net10.0-windows*\win-x64\publish\NebulaCommanderApp.exe`, a single self-contained file (it bundles the .NET runtime and Windows App SDK, so the target machine needs no prerequisites). See [client/windows-app/README.md](https://github.com/nebula-commander/nebula-commander/blob/main/client/windows-app/README.md) for details.
 
 For the background service, see `client/windows/README.md` and [Development: Manual builds](/docs/development/manual-builds/). The [Windows MSI installer](/docs/usage/ncclient/installation/windows/) installs and registers all three: `ncclient.exe`, `NebulaCommanderApp.exe`, and `ncclient-service.exe`.
