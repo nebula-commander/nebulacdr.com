@@ -28,6 +28,17 @@ hugo
 
 Output is in `public/`.
 
+## Deploy
+
+Every push to `main` builds the site and publishes it as an nginx image,
+`ghcr.io/nebula-commander/docs` (`docker/`, `.github/workflows/docs-image.yml`). The Cloud server
+runs that image behind Traefik, and Watchtower deploys each new one within about 5 minutes
+(nebula-commander-cloud: `deploy/docs/`). **A push to `main` goes live**, so keep docs for
+unreleased features on a branch until the release.
+
+The image serves `nebulacommander.com` and redirects `nebulacdr.com`, `www.nebulacdr.com` and
+`www.nebulacommander.com` to the same path there.
+
 ## Project structure
 
 - `content/en/` — English content (home, About, Docs, Blog, Community)

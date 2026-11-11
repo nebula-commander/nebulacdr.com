@@ -1,0 +1,106 @@
+name: Docs Image
+
+# Builds the site with Hugo and publishes it as an nginx image (docker/):
+#   ghcr.io/nebula-commander/docs:latest and :sha-<short>
+# The Cloud server runs `latest` (nebula-commander-cloud: deploy/docs/), and Watchtower
+# deploys each new image within about 5 minutes. So a push to main goes live:
+# keep docs for unreleased features on a branch until the release.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: docs-image
+  cancel-in-progress: true
+
+env:
+  REGISTRY: ghcr.io
+  DOCS_IMAGE_NAME: nebula-commander/docs
+  HUGO_VERSION: 0.152.2
+
+jobs:
+  build:
+    name: Build and publish docs image
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Go (Hugo modules)
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+          cache: false
+
+      - name: Set up Node (PostCSS)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Set up Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: ${{ env.HUGO_VERSION }}
+          extended: true
+
+      - name: Build site
+        run: |
+          npm ci
+          hugo --gc --minify
+
+      - name: Stage image context
+        run: |
+          mkdir image
+          cp docker/Dockerfile docker/default.conf image/
+          mv public image/public
+
+      - name: Smoke-test the image
+        run: |
+          docker build -t docs-test image
+          docker run -d --name docs-test -p 8080:80 docs-test
+          for i in $(seq 1 20); do curl -fs http://127.0.0.1:8080/healthz >/dev/null && break; sleep 1; done
+          for path in / /docs/ /docs/web-ui/move/; do
+            curl -fsS -o /dev/null "http://127.0.0.1:8080$path" || { echo "::error::$path not served"; docker logs docs-test; exit 1; }
+          done
+          code=$(curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:8080/no-such-page/)
+          [ "$code" = 404 ] || { echo "::error::missing page returned $code"; exit 1; }
+          loc=$(curl -s -o /dev/null -w '%{redirect_url}' -H 'Host: nebulacdr.com' http://127.0.0.1:8080/docs/)
+          [ "$loc" = "https://nebulacommander.com/docs/" ] || { echo "::error::nebulacdr.com redirect went to '$loc'"; exit 1; }
+          docker rm -f docs-test
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata (tags, labels)
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.DOCS_IMAGE_NAME }}
+          tags: |
+            type=raw,value=latest
+            type=sha,prefix=sha-
+
+      - name: Build and push docs image
+        uses: docker/build-push-action@v5
+        with:
+          context: image
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          platforms: linux/amd64,linux/arm64
