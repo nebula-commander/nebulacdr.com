@@ -14,7 +14,7 @@ Nebula Commander is a **self-hosted control plane** for [Nebula](https://github.
 - **Web UI** — React dashboard with OIDC (e.g. Keycloak) or dev token authentication
 - **Device client (ncclient)** — `pip install nebula-commander` for enroll and run; see [ncclient documentation](/docs/usage/ncclient/)
 
-## Status (as of v0.9.0)
+## Status (as of v0.9.1)
 
 ### What's implemented already
 

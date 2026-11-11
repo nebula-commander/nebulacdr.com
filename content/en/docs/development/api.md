@@ -14,7 +14,7 @@ The backend serves interactive documentation at:
 - **ReDoc** – /api/redoc
 - **OpenAPI schema** – /api/openapi.json
 
-For full request/response schemas and parameters, use the interactive docs. They're on by default; set [`NEBULA_COMMANDER_API_DOCS_ENABLED`](/docs/configuration/environment/#application) to `false` (NixOS: `apiDocs = false;`) to turn all three off. Before v0.8.4 the docs pages loaded the schema from `/openapi.json`, which a reverse proxy usually sends to the frontend, so they didn't render.
+For full request/response schemas and parameters, use the interactive docs. They're on by default; set [`NEBULA_COMMANDER_API_DOCS_ENABLED`](/docs/configuration/environment/#application) to `false` (NixOS: `apiDocs = false;`) to turn all three off. Before v0.9.0 the docs pages loaded the schema from `/openapi.json`, which a reverse proxy usually sends to the frontend, so they didn't render.
 
 ---
 

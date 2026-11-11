@@ -87,7 +87,7 @@ A final job prints the version and the full image names with that tag.
 
 **File:** `.github/workflows/publish-package-repo.yml`
 
-Rebuilds the signed apt and rpm repository at [pkgs.nebulacommander.com](https://pkgs.nebulacommander.com) (GitHub Pages) that Linux users add to install and update the client, service, and desktop app. See [Linux Desktop App](/docs/usage/ncclient/installation/linux/#package-repository-recommended).
+Rebuilds the signed apt and rpm repository at [pkgs.nebulacommander.com](https://pkgs.nebulacommander.com) that Linux users add to install and update the client, service, and desktop app. See [Linux Desktop App](/docs/usage/ncclient/installation/linux/#package-repository-recommended).
 
 ### Triggers
 
@@ -98,7 +98,10 @@ Rebuilds the signed apt and rpm repository at [pkgs.nebulacommander.com](https:/
 
 1. Downloads the `.deb`/`.rpm` assets of the newest 5 stable GitHub Releases that have Linux packages.
 2. Runs `packaging/repo/build_repo.py`: lays out an apt repository (`deb/`, one `stable` suite, `amd64` and `arm64`) and an rpm repository (`rpm/`), signs `InRelease`/`Release.gpg`, signs each RPM and `repomd.xml`, and writes `gpg.key`, the `.sources`/`.repo` files, and an index page.
-3. Verifies the signatures and deploys the site to GitHub Pages.
+3. Verifies the signatures and signs the client update manifest (`updates/latest.json`).
+4. Bakes the site into an nginx image, starts it to check the key files are served, and pushes it as
+   `ghcr.io/nebula-commander/pkgs` (tagged with the release version and `latest`, amd64 and arm64).
+   The server behind pkgs.nebulacommander.com runs `latest` and picks up each new image within a few minutes.
 
 The repository has no state of its own; every run regenerates it from the Releases.
 
@@ -106,6 +109,7 @@ The repository has no state of its own; every run regenerates it from the Releas
 
 - `PACKAGE_SIGNING_KEY` – The armored private key used for signing.
 - `PACKAGE_SIGNING_KEY_PASSPHRASE` – Its passphrase.
+- `UPDATE_SIGNING_KEY` – The Ed25519 key that signs the update manifest.
 
 ## Testing workflows locally (act)
 
